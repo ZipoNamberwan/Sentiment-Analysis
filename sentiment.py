@@ -9,13 +9,13 @@ class SentimentAnalyzer:
     Purpose: Generate Excel files with sentiment predictions.
     """
     
-    def __init__(self, model_name: str = "mdhugol/indonesia-bert-sentiment-classification", output_folder: str = "result"):
+    def __init__(self, model_name: str = "mdhugol/indonesia-bert-sentiment-classification", output_folder: str = "result/all"):
         """
         Initialize the SentimentAnalyzer.
         
         Args:
             model_name (str): Hugging Face model name for sentiment analysis
-            output_folder (str): Folder to save results (default: "result")
+            output_folder (str): Folder to save results (default: "result/all")
         """
         self.model_name = model_name
         self.output_folder = output_folder
@@ -126,5 +126,5 @@ class SentimentAnalyzer:
 
 # Example usage
 if __name__ == "__main__":
-    analyzer = SentimentAnalyzer(output_folder="result")
+    analyzer = SentimentAnalyzer(output_folder="result/all")
     output_file = analyzer.generate_sentiment_csv("preprocessed/taman bunga celosia_preprocessed.xlsx")

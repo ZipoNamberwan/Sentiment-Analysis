@@ -24,7 +24,7 @@ class SentimentAnalysisPipeline:
                  filter_max_years: int = 2,
                  filter_output_folder: str = "filtered",
                  preprocess_output_folder: str = "preprocessed", 
-                 sentiment_output_folder: str = "result",
+                 sentiment_output_folder: str = "result/all",
                  sentiment_model: str = "mdhugol/indonesia-bert-sentiment-classification"):
         """
         Initialize the complete pipeline.
@@ -87,7 +87,7 @@ def generate_summary_report(results: list) -> str:
     Returns:
         str: Path to the generated summary file
     """
-    summary_generator = SummaryGenerator(output_folder="result")
+    summary_generator = SummaryGenerator(output_folder="result/all")
     return summary_generator.generate_summary_report(results)
 
 def main():
@@ -99,7 +99,7 @@ def main():
         filter_max_years=2,
         filter_output_folder="filtered",
         preprocess_output_folder="preprocessed",
-        sentiment_output_folder="result"
+        sentiment_output_folder="result/all"
     )
     
     # Find all CSV files in the source folder
