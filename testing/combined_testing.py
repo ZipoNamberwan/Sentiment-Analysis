@@ -95,8 +95,7 @@ def main():
         
         evaluator = SentimentEvaluator(
             testing_folder=args.output,
-            output_folder=args.output,
-            generate_plots=not args.no_plots
+            output_folder=args.output
         )
         
         evaluation_success = evaluator.evaluate_testing_data()
